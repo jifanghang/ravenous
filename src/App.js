@@ -17,7 +17,6 @@ const business = {
   reviewCount: 90
 };
 
-
 const businesses = [
   business,
   business,
@@ -33,7 +32,7 @@ class App extends Component {
       <div className="App">
         <h1>ravenous</h1>
         <SearchBar />
-        <BusinessList business={businesses} /> 
+        <BusinessList businesses={businesses} /> 
       </div>
     );
   }
