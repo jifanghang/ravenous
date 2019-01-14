@@ -24,6 +24,7 @@ ravenous
 │   	└── /SearchBar          # the searching component
 │   	    └── Business.css
 │   	    └── Business.js
+│   └── /util                   # for Yelp functionalities
 │   ├── App.css                 # style for App
 │   ├── App.js                  # main div!
 │   ├── App.test.js             # TODO
@@ -74,3 +75,17 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Potential Bug
+
+#### `ENOSPC`
+
+If developing under Ubuntu environment, nodejs might yield this `ENOSPC` error.
+
+**Solution:**
+
+```bash
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
+*Cheers to @Murali Krishna on [stackoverflow](https://stackoverflow.com/questions/22475849/node-js-what-is-enospc-error-and-how-to-solve/32600959#32600959).*
